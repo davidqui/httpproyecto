@@ -1,0 +1,45 @@
+<h1>Proyecto de Usuario en Angular</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h3>Listado de Información de Usuario</h3>
+      <table class="table table-hover">
+        <thead class="thead-dark">
+          <th>Id</th>
+          <th>UserName</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Opciones</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of users">
+            <td>{{item.id}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.address}}</td>
+            <td>{{item.email}}</td>
+            <td>
+              <button (click)="eliminarUser(item.id)" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-4">
+      <h3>Formulario de Carga de Usuario</h3>
+      <div class="form-group">
+        <label for="controlNombre">UserName</label>
+        <input type="text" [(ngModel)]="agregarUserRegistro.username" class="form-control" placeholder="UserName del Usuario">
+      </div>
+      <div class="form-group">
+        <label for="controlNombre">Address</label>
+        <input type="text" [(ngModel)]="agregarUserRegistro.address" class="form-control" placeholder="Dirección del Usuario">
+      </div>
+      <div class="form-group">
+        <label for="controlNombre">Email</label>
+        <input type="text" [(ngModel)]="agregarUserRegistro.email" class="form-control" placeholder="Email del Usuario">
+      </div>
+      <button (click)="agregarUser()" class="btn btn-primary">Agregar</button>
+    </div>
+  </div>
+</div>
